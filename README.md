@@ -42,13 +42,11 @@ Script.
 ## What's inside
 
 ```
-skill/
-├── SKILL.md                            # entry point — loads when skill triggers
-└── references/
-    ├── syntax-reference.md             # complete language reference
-    ├── patterns.md                     # idiomatic patterns
-    ├── antipatterns.md                 # common mistakes and how to avoid them
-    └── builder-and-dx.md               # Agentforce Builder, DX CLI, VS Code, Vibes
+SKILL.md                                 # entry point — loads when skill triggers
+syntax-reference.md                      # complete language reference
+patterns.md                              # idiomatic patterns
+antipatterns.md                          # common mistakes and how to avoid them
+builder-and-dx.md                        # Agentforce Builder, DX CLI, VS Code, Vibes
 ```
 
 The skill follows the Anthropic *progressive disclosure* convention: the
@@ -73,8 +71,8 @@ strategy, Apex / Flow / Prompt-Template authoring, model selection.
 
 ### Claude.ai (web, desktop, mobile)
 
-1. Download the latest `salesforce-agent-script.skill` from the
-   [Releases page](../../releases).
+1. Download [`salesforce-agent-script.skill`](salesforce-agent-script.skill)
+   from this repository.
 2. In Claude.ai, open **Settings → Capabilities → Skills**.
 3. Click **Upload skill** and select the `.skill` file.
 
@@ -131,8 +129,8 @@ being relied upon — and signals to human reviewers where the gaps are.
 ## Currency
 
 Agent Script is moving fast. The content in this repository reflects the
-state of Salesforce documentation on the date of each release (see
-[`CHANGELOG.md`](CHANGELOG.md)). Between releases, expect drift on:
+state of Salesforce documentation as of the last update to this repository.
+Between updates, expect drift on:
 
 - New utilities in `@utils.*`
 - New action target schemes (`flow://`, `apex://`, `promptTemplate://` are
@@ -182,17 +180,17 @@ investing the time.
 
 ```bash
 # Clone
-git clone https://github.com/<your-username>/salesforce-agent-script-skill.git
-cd salesforce-agent-script-skill
+git clone https://github.com/<your-username>/salesforce-agent-script.git
+cd salesforce-agent-script
 
 # Edit the markdown files
-$EDITOR skill/SKILL.md skill/references/*.md
+$EDITOR SKILL.md *.md
 
 # Validate the skill structure
-python3 -m scripts.quick_validate skill/
+python3 -m scripts.quick_validate .
 
 # Package into a .skill file
-python3 -m scripts.package_skill skill/
+python3 -m scripts.package_skill .
 ```
 
 `quick_validate` and `package_skill` are part of Anthropic's

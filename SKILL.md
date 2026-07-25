@@ -116,7 +116,7 @@ Every agent is a single Agent Script file containing these block types
 | `start_agent <name>` | yes | The entry router. Runs at the start of every customer turn. Handles classification and routing. |
 | `subagent <name>` | 1+ | A specialized capability. Contains `description`, `reasoning.instructions`, `reasoning.actions`, `actions`. (Legacy keyword: `topic <name>`.) |
 
-For full block reference, see `references/syntax-reference.md`.
+For full block reference, see `syntax-reference.md`.
 
 ### File layout
 
@@ -149,7 +149,7 @@ deterministically vs. what the LLM decides**. Use this rubric:
 
 **Bias toward determinism for business rules; bias toward LLM for phrasing,
 classification, and slot filling.** Overloaded prompts with embedded business
-rules are the most common antipattern (see `references/antipatterns.md`).
+rules are the most common antipattern (see `antipatterns.md`).
 
 ## Quick Reference
 
@@ -186,9 +186,9 @@ Indentation is whitespace-sensitive. **Use spaces only — Salesforce
 recommends 3 spaces per level.** Comments start with `#`.
 
 For deeper coverage see:
-- `references/syntax-reference.md` for the complete language reference.
-- `references/patterns.md` for idiomatic patterns.
-- `references/antipatterns.md` for common pitfalls.
+- `syntax-reference.md` for the complete language reference.
+- `patterns.md` for idiomatic patterns.
+- `antipatterns.md` for common pitfalls.
 
 ## Authoring Workflow
 
@@ -287,16 +287,16 @@ Salesforce's documented patterns).
 
 Load on demand:
 
-- **`references/syntax-reference.md`** — Complete language reference: every
+- **`syntax-reference.md`** — Complete language reference: every
   block type, every property, all operators, variable types, action targets,
   utility functions. Read when writing new script or verifying syntax.
-- **`references/patterns.md`** — Idiomatic patterns: identity verification,
+- **`patterns.md`** — Idiomatic patterns: identity verification,
   slot filling, action chaining, conditional prompting, available-when
   filtering, system overrides, fetch-data-before-reasoning, required workflows.
   Read when designing a new subagent or stuck on "how would I express X".
-- **`references/antipatterns.md`** — Common mistakes and why they fail. Read
+- **`antipatterns.md`** — Common mistakes and why they fail. Read
   during reviews and when debugging unexpected agent behavior.
-- **`references/builder-and-dx.md`** — Surrounding tooling: Agentforce
+- **`builder-and-dx.md`** — Surrounding tooling: Agentforce
   Builder Canvas vs. Script view, Agentforce DX CLI commands, VS Code
   extension, Agentforce Vibes, authoring bundles, source-control workflow.
   Read when the question is about *how* to author or deploy, not *what* to
